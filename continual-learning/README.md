@@ -1,5 +1,7 @@
 # Continual Learning (Claude Code)
 
+> ⚠️ **Not human-reviewed — use at your own risk.** AI-ported, not audited by a human. This plugin installs a `Stop` hook that runs every session and can write to your `CLAUDE.md`. Read the code before installing. No warranty.
+
 Automatically and incrementally keeps **`./CLAUDE.md`** up to date from Claude Code session-transcript changes. Ported from the [Cursor continual-learning plugin](https://github.com/cursor/plugins/tree/main/continual-learning).
 
 The plugin combines:

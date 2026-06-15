@@ -1,5 +1,7 @@
 # team-kit (Claude Code)
 
+> ⚠️ **Not human-reviewed — use at your own risk.** AI-ported from the Cursor Team Kit, not audited by a human. Read the code before installing. No warranty.
+
 Team workflow kit for **Claude Code** — CI, code review, shipping, and test-reliability skills plus two subagents. Ported from the [Cursor Team Kit](https://github.com/cursor/plugins/tree/main/cursor-team-kit) and adapted to Claude Code conventions.
 
 ## What changed in the port
