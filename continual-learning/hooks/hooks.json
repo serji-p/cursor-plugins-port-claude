@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "CONTINUAL_LEARNING_TRIAL_MODE=1 bun run ${CLAUDE_PLUGIN_ROOT}/hooks/continual-learning-stop.ts",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

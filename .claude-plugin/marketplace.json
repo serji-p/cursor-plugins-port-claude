@@ -1,0 +1,19 @@
+{
+  "name": "claude-plugins",
+  "owner": {
+    "name": "Sergey Ponomarenko",
+    "email": "sponomarenko@piesoft.us"
+  },
+  "plugins": [
+    {
+      "name": "team-kit",
+      "source": "./team-kit",
+      "description": "CI, code review, shipping, and test-reliability skills + subagents. Ported from the Cursor Team Kit."
+    },
+    {
+      "name": "continual-learning",
+      "source": "./continual-learning",
+      "description": "Incrementally learns durable preferences and workspace facts from session transcripts and keeps CLAUDE.md current. Ported from the Cursor continual-learning plugin."
+    }
+  ]
+}

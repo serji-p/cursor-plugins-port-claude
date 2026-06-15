@@ -1,0 +1,19 @@
+{
+  "name": "team-kit",
+  "version": "0.1.0",
+  "description": "Team workflow kit for Claude Code: CI, code review, shipping, and test-reliability skills plus subagents. Ported from the Cursor Team Kit, adapted to Claude Code conventions (gh/git, session transcripts, native subagents).",
+  "author": {
+    "name": "Sergey Ponomarenko",
+    "email": "sponomarenko@piesoft.us"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ci",
+    "code-review",
+    "pull-request",
+    "testing",
+    "workflow",
+    "git",
+    "gh"
+  ]
+}

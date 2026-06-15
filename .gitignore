@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# per-project runtime state created by the continual-learning hook
+.claude/continual-learning/
+
+# editor / OS noise
+*.swp
+*~
