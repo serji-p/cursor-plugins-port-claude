@@ -7,10 +7,22 @@ Automatically and incrementally keeps **`./CLAUDE.md`** up to date from Claude C
 The plugin combines:
 
 - A **`Stop` hook** that decides when to trigger learning (cadence-gated).
-- A **`continual-learning`** skill that orchestrates the flow.
-- An **`agents-memory-updater`** subagent that mines new/changed transcripts and updates `CLAUDE.md`.
+- A **`continual-learning`** skill that orchestrates the per-project flow.
+- An **`agents-memory-updater`** subagent that mines new/changed transcripts and updates that project's `CLAUDE.md`.
+- A **`global-memory-curator`** skill (+ subagent) for the cross-project / global level — see below.
 
 It avoids noisy rewrites by reading existing `CLAUDE.md` first and updating matching bullets in place, processing only new/changed transcripts, and writing plain bullets only (no evidence/confidence metadata).
+
+## Global memory curator (cross-project)
+
+`continual-learning` keeps each *project's* `CLAUDE.md` current. The **`global-memory-curator`** skill works one level up: run it in a folder that holds many projects and it will
+
+- mine every project's `CLAUDE.md`, `AGENTS.md`, and continual-learning state for **recurring user-level** rules/preferences,
+- propose promoting the durable, cross-project ones into your **global `~/.claude/CLAUDE.md`**,
+- review that global file for bad patterns, contradictions, duplication, staleness, and leaked project-specifics, and
+- return a report + a proposed diff.
+
+Modes: **interactive** (analyze → show diff → apply on your explicit approval, with a backup) or **suggest-only** (analyze → save/show report, never edit the file — always used for unattended/scheduled runs). Run it manually (`/continual-learning`-style invocation of `global-memory-curator`) or on a weekly schedule.
 
 ## Is this in stock Claude Code?
 

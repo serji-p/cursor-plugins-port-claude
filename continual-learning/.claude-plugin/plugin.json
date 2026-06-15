@@ -1,7 +1,7 @@
 {
   "name": "continual-learning",
-  "version": "1.0.0",
-  "description": "Incrementally learns durable user preferences and workspace facts from Claude Code session transcripts and keeps CLAUDE.md up to date with plain bullet points. Ported from the Cursor continual-learning plugin.",
+  "version": "1.1.0",
+  "description": "Incrementally learns durable user preferences and workspace facts from Claude Code session transcripts and keeps CLAUDE.md up to date. Adds a cross-project global-memory-curator that promotes recurring learnings into the global ~/.claude/CLAUDE.md and reviews it for bad patterns. Ported from the Cursor continual-learning plugin.",
   "author": {
     "name": "Sergey Ponomarenko",
     "email": "sponomarenko@piesoft.us"
