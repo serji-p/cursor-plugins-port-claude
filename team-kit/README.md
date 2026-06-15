@@ -15,9 +15,13 @@ Team workflow kit for **Claude Code** — CI, code review, shipping, and test-re
 
 ## Install
 
-This is a standard Claude Code plugin (`.claude-plugin/plugin.json` + `skills/` + `agents/`).
+This is a standard Claude Code plugin (`.claude-plugin/plugin.json` + `skills/` + `agents/`), published in the [`cursor-plugins-port-claude`](https://github.com/serji-p/cursor-plugins-port-claude) marketplace.
 
-- **As a plugin:** add this directory to a plugin marketplace / install via `/plugin`, or point your plugin config at this path.
+- **As a managed plugin (recommended):**
+  ```
+  /plugin marketplace add serji-p/cursor-plugins-port-claude
+  /plugin install team-kit@claude-plugins
+  ```
 - **Quick personal use:** symlink or copy the skill dirs into `~/.claude/skills/` and the agent files into `~/.claude/agents/`:
   ```bash
   ln -s "$PWD"/skills/* ~/.claude/skills/

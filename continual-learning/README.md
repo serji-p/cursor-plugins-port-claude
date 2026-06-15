@@ -68,16 +68,23 @@ Only these two managed sections, each a plain bullet list (≤12 bullets):
 
 ## Install / enable
 
-**Enabled globally** for this machine by:
-1. Symlinking the skill + agent into `~/.claude/skills` and `~/.claude/agents`.
-2. Adding a `Stop` hook to `~/.claude/settings.json`:
+**As a managed plugin** (recommended) — via the marketplace in this repo:
+
+```
+/plugin marketplace add serji-p/cursor-plugins-port-claude
+/plugin install continual-learning@claude-plugins
+```
+
+`hooks/hooks.json` registers the `Stop` hook with `${CLAUDE_PLUGIN_ROOT}` and enables trial mode (`CONTINUAL_LEARNING_TRIAL_MODE=1`).
+
+**Manual / global enable** (what's wired on the author's machine):
+1. Symlink the skill + agent into `~/.claude/skills` and `~/.claude/agents`.
+2. Add a `Stop` hook to `~/.claude/settings.json`:
    ```json
-   { "type": "command", "command": "bun run $HOME/continual-learning/hooks/continual-learning-stop.ts", "timeout": 30 }
+   { "type": "command", "command": "CONTINUAL_LEARNING_TRIAL_MODE=1 bun run $HOME/claude-plugins/continual-learning/hooks/continual-learning-stop.ts", "timeout": 30 }
    ```
 
-To **disable**: remove that hook entry from `~/.claude/settings.json` (the `check-status-md.sh` Stop hook stays untouched). The skill/agent can stay — they only act when invoked.
-
-To install elsewhere as a managed plugin instead, point a plugin marketplace at this directory (`.claude-plugin/plugin.json` + `hooks/hooks.json` use `${CLAUDE_PLUGIN_ROOT}`).
+To **disable**: remove that hook entry from `~/.claude/settings.json` (any other Stop hooks stay untouched). The skill/agent can stay — they only act when invoked.
 
 ## License
 
