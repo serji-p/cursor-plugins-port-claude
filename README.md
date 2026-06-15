@@ -13,12 +13,12 @@ Repo: <https://github.com/serji-p/cursor-plugins-port-claude>
 
 ## Install
 
-Add this repo as a plugin marketplace, then install either plugin (marketplace name is `claude-plugins`):
+Add this repo as a plugin marketplace, then install either plugin (marketplace name is `cursor-plugins-port`):
 
 ```
 /plugin marketplace add serji-p/cursor-plugins-port-claude
-/plugin install team-kit@claude-plugins
-/plugin install continual-learning@claude-plugins
+/plugin install team-kit@cursor-plugins-port
+/plugin install continual-learning@cursor-plugins-port
 ```
 
 Or from a local clone:

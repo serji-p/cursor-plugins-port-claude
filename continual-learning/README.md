@@ -74,7 +74,7 @@ Only these two managed sections, each a plain bullet list (≤12 bullets):
 
 ```
 /plugin marketplace add serji-p/cursor-plugins-port-claude
-/plugin install continual-learning@claude-plugins
+/plugin install continual-learning@cursor-plugins-port
 ```
 
 `hooks/hooks.json` registers the `Stop` hook with `${CLAUDE_PLUGIN_ROOT}` and enables trial mode (`CONTINUAL_LEARNING_TRIAL_MODE=1`).

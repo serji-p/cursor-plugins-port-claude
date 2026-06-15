@@ -22,7 +22,7 @@ This is a standard Claude Code plugin (`.claude-plugin/plugin.json` + `skills/` 
 - **As a managed plugin (recommended):**
   ```
   /plugin marketplace add serji-p/cursor-plugins-port-claude
-  /plugin install team-kit@claude-plugins
+  /plugin install team-kit@cursor-plugins-port
   ```
 - **Quick personal use:** symlink or copy the skill dirs into `~/.claude/skills/` and the agent files into `~/.claude/agents/`:
   ```bash
