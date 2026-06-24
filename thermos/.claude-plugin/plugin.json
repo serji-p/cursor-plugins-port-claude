@@ -1,0 +1,19 @@
+{
+  "name": "thermos",
+  "version": "1.0.0",
+  "description": "Thermo-nuclear branch review for Claude Code: deep correctness + security audits, a harsh maintainability rubric, and a `thermos` orchestrator that runs both review subagents in parallel and synthesizes findings. Ported from the Cursor Thermos plugin.",
+  "author": {
+    "name": "Sergey Ponomarenko",
+    "email": "sponomarenko@piesoft.us"
+  },
+  "license": "MIT",
+  "keywords": [
+    "thermos",
+    "thermo-nuclear",
+    "code-review",
+    "deep-review",
+    "code-quality",
+    "security-review",
+    "subagents"
+  ]
+}

@@ -1,12 +1,14 @@
-# Project Status — 2026-06-15
+# Project Status — 2026-06-23
 
 ## Current state
-- Mono-repo `cursor-plugins-port` (marketplace name) published at github.com/serji-p/cursor-plugins-port-claude. Two plugins ported from cursor/plugins.
-- **team-kit** (v0.1.0): 16 skills + 2 agents (CI/review/shipping/test-reliability). Installed as managed plugin (`team-kit@cursor-plugins-port`).
-- **continual-learning** (v1.1.0): Stop hook → `continual-learning` skill → `agents-memory-updater` (per-project transcript mining into CLAUDE.md). Installed + enabled. Stop hook live (trial mode).
-- New in v1.1.0: `global-memory-curator` skill + read-only subagent — cross-project scan of CLAUDE.md/AGENTS.md/CL-state → promotes recurring user-level patterns into global `~/.claude/CLAUDE.md`, reviews it for bad patterns. Interactive (apply-on-approval, backed up) or suggest-only.
-- Weekly scheduled task `weekly-global-memory-curation` (Mon 09:00 local, suggest-only) writes a report to `~/.claude/memory-curator-reports/<date>.md`.
-- READMEs carry an AI-ported / not-human-reviewed / use-at-your-own-risk disclaimer.
+- Mono-repo `cursor-plugins-port` (marketplace name) published at github.com/serji-p/cursor-plugins-port-claude. **Five** plugins ported from cursor/plugins.
+- **team-kit** (v0.1.0): 16 skills + 2 agents (CI/review/shipping/test-reliability).
+- **continual-learning** (v1.1.0): Stop hook → `continual-learning` skill → `agents-memory-updater` + `global-memory-curator` (cross-project scan → global `~/.claude/CLAUDE.md`). Weekly scheduled `weekly-global-memory-curation` task.
+- **thermos** (v1.0.0, NEW): 3 skills (`thermo-nuclear-review`, `thermo-nuclear-code-quality-review`, `thermos` orchestrator) + 2 subagents. Adapted to Claude `Agent`-tool dispatch, `tools:`/`model: inherit` on agents, `gh`/`glab` for PR discussion. Overlaps team-kit's code-quality skill (mirrors upstream's intentional duplication; safe — namespaced per-plugin).
+- **pr-review-canvas** (v1.0.0, NEW): standalone plugin lifting team-kit's already-adapted PR canvas skill (self-contained HTML via `template.html`/`styles.css`/`renderer.js`, opened locally).
+- **docs-canvas** (v1.0.0, NEW): upstream is a placeholder; **fleshed out** into a working skill — bundled docs toolkit (sticky auto-TOC + scroll-spy, anchor links, copy buttons, callouts, tables, opt-in mermaid) producing a self-contained HTML doc. Assembly smoke-tested (HTML well-formed, `node --check` clean).
+- Upstream-update check: **no upstream changes since the June 15 fork**. Last `cursor-team-kit` change 2026-05-28, last `continual-learning` change 2026-03-13; June 17 upstream HEAD only touched `pstack`. Nothing to merge.
+- All READMEs carry the AI-ported / not-human-reviewed / use-at-your-own-risk disclaimer.
 
 ## In progress
 - None.
@@ -18,6 +20,6 @@
 - None.
 
 ## Next steps
-1. `git push` (local commits ahead of origin: docs + global-memory-curator feature).
-2. To make v1.1.0 / the `global-memory-curator` skill live: `/plugin marketplace update cursor-plugins-port` then reinstall `continual-learning@cursor-plugins-port`.
-3. Optional: "Run now" the scheduled task once to pre-approve tool permissions for unattended runs.
+1. `git push` (new plugins + manifest/README/STATUS updates are local-only, ahead of origin).
+2. To make the new plugins installable: `/plugin marketplace update cursor-plugins-port`, then `/plugin install thermos@cursor-plugins-port` (and `pr-review-canvas`, `docs-canvas`).
+3. Optional: open a `docs-canvas` / `pr-review-canvas` output page in a browser to eyeball the live render before relying on them.

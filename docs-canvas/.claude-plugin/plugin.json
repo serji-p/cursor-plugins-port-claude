@@ -1,0 +1,18 @@
+{
+  "name": "docs-canvas",
+  "version": "1.0.0",
+  "description": "Render documentation — architecture notes, API references, runbooks, codebase walkthroughs — as an interactive, navigable, self-contained HTML page with a sticky table of contents, sections, callouts, code blocks, tables, and optional diagrams. Ported from the Cursor Docs Canvas plugin and fleshed out for Claude Code.",
+  "author": {
+    "name": "Sergey Ponomarenko",
+    "email": "sponomarenko@piesoft.us"
+  },
+  "license": "MIT",
+  "keywords": [
+    "canvas",
+    "documentation",
+    "docs",
+    "architecture",
+    "reference",
+    "html"
+  ]
+}

@@ -14,6 +14,21 @@
       "name": "continual-learning",
       "source": "./continual-learning",
       "description": "Incrementally learns durable preferences and workspace facts from session transcripts and keeps CLAUDE.md current. Ported from the Cursor continual-learning plugin."
+    },
+    {
+      "name": "thermos",
+      "source": "./thermos",
+      "description": "Thermo-nuclear branch review: deep correctness + security audits, a harsh maintainability rubric, and a thermos orchestrator that runs both review subagents in parallel. Ported from the Cursor Thermos plugin."
+    },
+    {
+      "name": "pr-review-canvas",
+      "source": "./pr-review-canvas",
+      "description": "Render a GitHub PR review as an interactive, self-contained HTML walkthrough with categorized files, annotations, and moved-code-aware diffs. Ported from the Cursor PR Review Canvas plugin."
+    },
+    {
+      "name": "docs-canvas",
+      "source": "./docs-canvas",
+      "description": "Render documentation as a navigable, self-contained HTML page with a sticky table of contents, sections, callouts, and code blocks. Ported from the Cursor Docs Canvas plugin."
     }
   ]
 }

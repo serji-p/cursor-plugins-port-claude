@@ -1,0 +1,18 @@
+{
+  "name": "pr-review-canvas",
+  "version": "1.0.0",
+  "description": "Render a GitHub PR review as an interactive, self-contained HTML walkthrough: fetch PR data via the gh API, categorize files into core vs mechanical changes, add reviewer annotations, and render diffs with moved-code detection. Ported from the Cursor PR Review Canvas plugin.",
+  "author": {
+    "name": "Sergey Ponomarenko",
+    "email": "sponomarenko@piesoft.us"
+  },
+  "license": "MIT",
+  "keywords": [
+    "canvas",
+    "pull-request",
+    "code-review",
+    "diff",
+    "gh",
+    "html"
+  ]
+}
