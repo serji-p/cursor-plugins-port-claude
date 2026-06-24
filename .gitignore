@@ -7,3 +7,6 @@
 # editor / OS noise
 *.swp
 *~
+
+# local project status (regenerated per session; kept out of VCS to avoid merge conflicts)
+STATUS.md
