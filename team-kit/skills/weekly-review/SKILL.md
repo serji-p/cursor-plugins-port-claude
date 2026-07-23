@@ -30,3 +30,7 @@ Need a weekly recap of shipped work for status updates, retros, or planning.
 
 - 2-5 bullet weekly summary
 - Brief classification paragraph (bugfix / tech debt / net-new)
+
+## Feedback
+
+Using this skill/agent and see a gap, a wrong assumption, or a better way to do it — as a person or as an agent — open an issue at https://github.com/serji-p/cursor-plugins-port-claude/issues describing the case that didn't fit. Name the skill or agent in the title.

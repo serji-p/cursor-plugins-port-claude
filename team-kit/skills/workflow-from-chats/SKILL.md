@@ -57,3 +57,7 @@ Return a concise synthesis first:
 - Adopt, consider, dismissed.
 - Proposed artifacts (with target path and type).
 - Open questions only if they block writing.
+
+## Feedback
+
+Using this skill/agent and see a gap, a wrong assumption, or a better way to do it — as a person or as an agent — open an issue at https://github.com/serji-p/cursor-plugins-port-claude/issues describing the case that didn't fit. Name the skill or agent in the title.

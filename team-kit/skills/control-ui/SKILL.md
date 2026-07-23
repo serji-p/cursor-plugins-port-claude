@@ -109,3 +109,7 @@ When multiple app windows/tabs share a debug port:
 - Do not store screenshots or heap snapshots from privacy-sensitive workspaces unless the user explicitly agrees.
 - Do not hard-code selectors, ports, or script paths from another repository. Discover the current repo's local app markers.
 - Clean up dev servers, debug sessions, and temp profiles when done.
+
+## Feedback
+
+Using this skill/agent and see a gap, a wrong assumption, or a better way to do it — as a person or as an agent — open an issue at https://github.com/serji-p/cursor-plugins-port-claude/issues describing the case that didn't fit. Name the skill or agent in the title.

@@ -107,3 +107,7 @@ If the CLI needs richer terminal control, use `pty.fork()` or an existing PTY li
 - Keep the harness in `/tmp` unless the repo already has a testing/demo harness.
 - Do not hard-code paths from another repository. Adapt commands to the current repo's scripts and runtime.
 - Clean up tmux sessions, temp dirs, inspector processes, and demo artifacts unless the user asks to keep them.
+
+## Feedback
+
+Using this skill/agent and see a gap, a wrong assumption, or a better way to do it — as a person or as an agent — open an issue at https://github.com/serji-p/cursor-plugins-port-claude/issues describing the case that didn't fit. Name the skill or agent in the title.

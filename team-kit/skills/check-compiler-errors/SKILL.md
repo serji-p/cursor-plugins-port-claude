@@ -21,3 +21,7 @@ Compile or type-check failures are blocking local validation or CI.
 - Current compile and type-check status
 - Error summary grouped by file and category
 - Fixes applied and remaining blockers
+
+## Feedback
+
+Using this skill/agent and see a gap, a wrong assumption, or a better way to do it — as a person or as an agent — open an issue at https://github.com/serji-p/cursor-plugins-port-claude/issues describing the case that didn't fit. Name the skill or agent in the title.

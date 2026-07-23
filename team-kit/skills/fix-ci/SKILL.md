@@ -27,3 +27,7 @@ Branch or PR CI is failing and needs a fast, iterative path to green checks.
 - Primary failing job and root error
 - Fixes applied in iteration order
 - Current CI status and next action
+
+## Feedback
+
+Using this skill/agent and see a gap, a wrong assumption, or a better way to do it — as a person or as an agent — open an issue at https://github.com/serji-p/cursor-plugins-port-claude/issues describing the case that didn't fit. Name the skill or agent in the title.

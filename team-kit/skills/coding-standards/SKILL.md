@@ -37,3 +37,7 @@ function area(shape: Shape): number {
 - Keep imports at the top of the module. No inline imports in function bodies, type annotations, or interface fields unless a documented circular-dependency reason requires it.
 - In switch statements over discriminated unions or enums, add a `never` check in the default case so new variants fail to compile until handled.
 ```
+
+## Feedback
+
+Using this skill/agent and see a gap, a wrong assumption, or a better way to do it — as a person or as an agent — open an issue at https://github.com/serji-p/cursor-plugins-port-claude/issues describing the case that didn't fit. Name the skill or agent in the title.

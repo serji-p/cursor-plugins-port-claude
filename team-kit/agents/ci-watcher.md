@@ -26,3 +26,7 @@ Use when waiting for CI results, CI has failed, or when proactively monitoring b
 - CI status (passed/failed)
 - PR and check metadata
 - If failed: concise failure excerpt or external check link and likely next step
+
+## Feedback
+
+Using this skill/agent and see a gap, a wrong assumption, or a better way to do it — as a person or as an agent — open an issue at https://github.com/serji-p/cursor-plugins-port-claude/issues describing the case that didn't fit. Name the skill or agent in the title.

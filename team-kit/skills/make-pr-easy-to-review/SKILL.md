@@ -57,3 +57,7 @@ When code behavior should stay untouched, prefer PR description and review notes
 - Never hide meaningful behavior changes inside "cleanup".
 - Do not bypass hooks unless the user explicitly asks.
 - If the PR is too large to make reviewable with notes, recommend splitting instead of polishing around the problem.
+
+## Feedback
+
+Using this skill/agent and see a gap, a wrong assumption, or a better way to do it — as a person or as an agent — open an issue at https://github.com/serji-p/cursor-plugins-port-claude/issues describing the case that didn't fit. Name the skill or agent in the title.

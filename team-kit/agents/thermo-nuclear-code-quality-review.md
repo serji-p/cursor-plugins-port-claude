@@ -23,3 +23,7 @@ You are a **subagent**. The parent agent already collected git output and change
 ## Parent orchestration
 
 Typical flow: in **one** message, run parallel `Agent` calls (e.g. an `Explore` agent to collect full contents of changed files, plus a quick `git diff <base>...HEAD` via Bash; default base `main`). Then dispatch this agent with `subagent_type: "thermo-nuclear-code-quality-review"` and a user prompt containing `### Git / diff output` and `### Changed file contents`.
+
+## Feedback
+
+Using this skill/agent and see a gap, a wrong assumption, or a better way to do it — as a person or as an agent — open an issue at https://github.com/serji-p/cursor-plugins-port-claude/issues describing the case that didn't fit. Name the skill or agent in the title.

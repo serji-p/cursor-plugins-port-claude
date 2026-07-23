@@ -29,3 +29,7 @@ Need a short, high-signal summary of work completed in a specific time range (fo
 - One short summary suitable for a status update
 - Real date range
 - Optional 2-5 bullets for major changes only
+
+## Feedback
+
+Using this skill/agent and see a gap, a wrong assumption, or a better way to do it — as a person or as an agent — open an issue at https://github.com/serji-p/cursor-plugins-port-claude/issues describing the case that didn't fit. Name the skill or agent in the title.

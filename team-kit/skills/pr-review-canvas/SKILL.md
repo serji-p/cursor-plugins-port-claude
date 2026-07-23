@@ -175,3 +175,7 @@ Since renderer.js loads in `<head>`, you can also call `renderDiff(target, lines
 - Use `var(--warning)` for orange, `var(--success)` for green, `var(--danger)` for red, `var(--accent)` for blue
 - Sticky file headers (`position: sticky; top: 0`) and notes (`top: 35px`) pin while scrolling
 - Core files expanded by default (`.file-body.open`), mechanical files collapsed
+
+## Feedback
+
+Using this skill/agent and see a gap, a wrong assumption, or a better way to do it — as a person or as an agent — open an issue at https://github.com/serji-p/cursor-plugins-port-claude/issues describing the case that didn't fit. Name the skill or agent in the title.
