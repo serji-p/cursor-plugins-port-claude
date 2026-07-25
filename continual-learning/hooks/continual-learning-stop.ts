@@ -10,6 +10,8 @@
 //   - stop_hook_active guards against infinite continuation loops.
 //
 // State is kept per-project under <cwd>/.claude/continual-learning/.
+// Once-per-session: lastRunSessionId blocks a second Stop injection in the
+// same Claude Code session even if turn/minute cadence re-arms.
 
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
@@ -36,6 +38,8 @@ interface ContinualLearningState {
   turnsSinceLastRun: number;
   lastTranscriptMtimeMs: number | null;
   trialStartedAtMs: number | null;
+  /** Session that already received a Stop-injected run; blocks repeat mid-session. */
+  lastRunSessionId: string | null;
 }
 
 function stateDir(cwd: string): string {
@@ -51,7 +55,8 @@ function indexPath(cwd: string): string {
 function followupMessage(cwd: string): string {
   const index = indexPath(cwd);
   return (
-    "Run the `continual-learning` skill now, delegating the full flow to the " +
+    "Run the `continual-learning` skill now (once this session — do not re-run " +
+    "mid-session afterward unless the user explicitly asks), delegating the full flow to the " +
     "`agents-memory-updater` subagent. Use incremental transcript processing with index file " +
     `\`${index}\`: only consider transcripts not in the index or whose mtime is newer than the ` +
     "indexed mtime. Have the subagent refresh index mtimes, drop entries for deleted transcripts, " +
@@ -92,6 +97,7 @@ function loadState(cwd: string): ContinualLearningState {
     turnsSinceLastRun: 0,
     lastTranscriptMtimeMs: null,
     trialStartedAtMs: null,
+    lastRunSessionId: null,
   };
 
   const path = statePath(cwd);
@@ -121,6 +127,10 @@ function loadState(cwd: string): ContinualLearningState {
         typeof parsed.trialStartedAtMs === "number" &&
         Number.isFinite(parsed.trialStartedAtMs)
           ? parsed.trialStartedAtMs
+          : null,
+      lastRunSessionId:
+        typeof parsed.lastRunSessionId === "string" && parsed.lastRunSessionId.length > 0
+          ? parsed.lastRunSessionId
           : null,
     };
   } catch {
@@ -165,10 +175,18 @@ async function main(): Promise<number> {
     }
 
     const state = loadState(cwd);
+    const sessionId =
+      typeof input.session_id === "string" && input.session_id.length > 0
+        ? input.session_id
+        : null;
 
     // A normal Stop event (not a continuation) == one completed turn.
     const turnsSinceLastRun = state.turnsSinceLastRun + 1;
     const now = Date.now();
+
+    // Once-per-session gate: never re-inject mid-session even if cadence re-arms.
+    const alreadyRanThisSession =
+      sessionId !== null && state.lastRunSessionId !== null && state.lastRunSessionId === sessionId;
 
     const trialEnabled = parseBoolean(
       readEnvValue("CONTINUAL_LEARNING_TRIAL_MODE", "CONTINUOUS_LEARNING_TRIAL_MODE")
@@ -218,6 +236,7 @@ async function main(): Promise<number> {
       (state.lastTranscriptMtimeMs === null || transcriptMtimeMs > state.lastTranscriptMtimeMs);
 
     const shouldTrigger =
+      !alreadyRanThisSession &&
       turnsSinceLastRun >= effectiveMinTurns &&
       minutesSinceLastRun >= effectiveMinMinutes &&
       hasTranscriptAdvanced;
@@ -226,6 +245,9 @@ async function main(): Promise<number> {
       state.lastRunAtMs = now;
       state.turnsSinceLastRun = 0;
       state.lastTranscriptMtimeMs = transcriptMtimeMs;
+      if (sessionId !== null) {
+        state.lastRunSessionId = sessionId;
+      }
       saveState(cwd, state);
 
       emit({

@@ -56,14 +56,20 @@ Add to `.gitignore`:
 
 ## Trigger cadence
 
+The `Stop` hook injects at most **once per Claude Code session** (`session_id` gated). Cadence below only decides *when* that single injection is eligible — it never re-fires mid-session.
+
 Default:
 - min 10 completed turns
 - min 120 minutes since last run
 - transcript mtime must have advanced
+- plus once-per-session gate
 
 Trial mode (set `CONTINUAL_LEARNING_TRIAL_MODE=1`):
 - min 3 turns, min 15 minutes
 - expires 24h after first turn, then falls back to default
+- still once per session
+
+The skill itself also refuses mid-delivery / repeat automatic runs; honor an explicit user re-request only.
 
 ## Env overrides
 
