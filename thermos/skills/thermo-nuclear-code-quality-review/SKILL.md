@@ -189,3 +189,26 @@ Treat these as presumptive blockers unless the author can justify them clearly:
 - the PR duplicates an existing helper or puts logic in the wrong layer when there is a clear canonical home
 
 If those conditions are not met, leave explicit, actionable feedback and push for a cleaner decomposition.
+
+## Load-bearing tests
+
+A test that only asserts a constant, column name, or string *appears* somewhere — in emitted
+SQL, request params, rendered DOM — passes against an implementation that enforces nothing. When
+a change touches several independent mechanisms (e.g. a join predicate plus a separate ordering
+rule), each mechanism needs its own test that goes red when *only that mechanism* is reverted; a
+fixture that already satisfies one mechanism can mask a break in another. Reviewers may verify
+this by mutating a copy of the code (e.g. `git archive` into a scratch directory), never the
+working tree. Severity: `medium`.
+
+## Severity and output
+
+Report findings and severities in the shared findings format — see
+`../thermos/references/findings-format.md` (relative to this skill's directory) for the JSON
+schema and severity definitions. Map this rubric's priority order to that schema's severities:
+
+- Priority 1–2 (structural regressions, missed dramatic-simplification opportunities) → `high`
+- Priority 3–5 (spaghetti/branching growth, boundary/abstraction/type problems, file-size and
+  decomposition concerns) → `medium`
+- Priority 6–7 (modularity/abstraction issues, legibility/maintainability concerns) → `low`
+- Any Approval Bar violation (see above) is **at least** `medium`, regardless of which priority
+  bucket it would otherwise fall into.
