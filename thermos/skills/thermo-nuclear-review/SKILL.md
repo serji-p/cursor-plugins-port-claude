@@ -48,3 +48,8 @@ Flag issues found by review bots or others in the PR/MR discussion that you incl
 - NEVER present issues with unfinished research. E.g. Never say something like, "The client has issue X, but if handled in the backend then this is ok." if you have access to the backend code and can check for yourself.
 - You MUST wait to check the PR/MR discussion until AFTER you have performed your audit. This way you have fresh eyes while you review.
 - Be EXTREMELY thorough, rigorous, careful, ambitious, and attentive. NOTHING can slip through.
+
+# Severity and output
+Report findings and severities in the shared findings format — see
+`../thermos/references/findings-format.md` (relative to this skill's directory) for the JSON
+schema and the critical/high/medium/low severity definitions this rubric's findings map to.

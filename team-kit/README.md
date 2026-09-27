@@ -45,7 +45,6 @@ This is a standard Claude Code plugin (`.claude-plugin/plugin.json` + `skills/` 
 | `control-cli` | Build/adapt a local harness to drive and profile interactive CLIs/TUIs |
 | `control-ui` | Build/adapt a local browser/CDP harness for web/IDE/Electron UIs |
 | `deslop` | Remove AI-generated code slop and clean up style |
-| `thermo-nuclear-code-quality-review` | Unusually strict maintainability review (code-judo, 1k-line rule, spaghetti, boundaries) |
 | `what-did-i-get-done` | Summarize authored commits over a time period |
 | `weekly-review` | Weekly recap with bugfix/tech-debt/net-new highlights |
 | `workflow-from-chats` | Extract durable preferences from Claude Code sessions into skills/rules/docs |
@@ -56,7 +55,10 @@ This is a standard Claude Code plugin (`.claude-plugin/plugin.json` + `skills/` 
 | Agent | Description |
 |:------|:------------|
 | `ci-watcher` | Monitor PR checks and return concise pass/fail summaries (run in background) |
-| `thermo-nuclear-code-quality-review` | Subagent that runs the thermo-nuclear rubric against a prepared diff |
+
+> The `thermo-nuclear-code-quality-review` skill + subagent used to be duplicated here; that
+> copy was removed as a duplicate of the `thermos` plugin's version. Install `thermos` for
+> that review.
 
 ## Skipped (covered by existing Claude Code tools)
 
